@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户信息</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet" />
+    <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .user-info {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+    .user-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .user-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .user-details {
+      color: #666;
+    }
+    h1 {
+      text-align: center;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="user-info">
+      <h1>个人信息</h1>
+      <div class="user-avatar">
+        <img src="https://picsum.photos/200/200" alt="User Avatar" />
+      </div>
+      <div class="user-name">LSL123</div>
+      <div class="user-details">
+        <p><strong>id:</strong> akjsh@qq.com</p>
+        <br />
+        <p><strong>用户名：</strong> New York, USA</p>
+        <br />
+        <p><strong>手机号：</strong> Web development, hiking, photography</p>
+        <br />
+        <p><strong>Email：</strong> akjsh@qq.com</p>
+        <br />
+        <p><strong>QQ号：</strong> New York, USA</p>
+        <br />
+        <p><strong>创建时间：</strong> akjsh@qq.com</p>
+        <br />
+        <p><strong>更新时间：</strong> New York, USA</p>
+        <br />
+      </div>
+    </div>
+    <script>
+      $(function () {
+        let token = localStorage.getItem("token");
+        $.ajax({
+          url: "http://manage.zzgoodqc.cn/api/user/userinfo",
+          type: "GET",
+          headers: {
+            Authorization: token,
+          },
+          success: function (res) {
+            let arr = Array(res.data);
+            let html = "";
+            arr.forEach((item) => {
+              html += `  <p><strong>id:</strong> ${item.id}</p>
+                         <p><strong>用户名：</strong> ${item.username}</p>
+                         <p><strong>手机号：</strong> ${item.mobile}</p>
+                         <p><strong>Email：</strong> ${item.email}</p>
+                         <p><strong>QQ号：</strong> ${item.qq}</p>
+                         <p><strong>创建时间：</strong> ${item.created_at}</p>
+                         <p><strong>更新时间：</strong> ${item.updated_at}</p>`;
+            });
+            $(".user-details").html(html);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
