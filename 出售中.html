@@ -184,9 +184,10 @@
             type="text"
             placeholder="商品名称/编码/条码"
             style="width: 300px; height: 25px"
+            id="Tname"
           />&emsp; &emsp; &emsp; 商品分类：<select
             name=""
-            id=""
+            id="Tstatus"
             style="width: 150px; height: 25px"
           >
             <option value="">全部</option>
@@ -195,10 +196,15 @@
           >&emsp; &emsp; &emsp; 创建时间：<input
             type="datetime-local"
             style="width: 300px; height: 25px"
+            id="Ttime"
           />
         </div>
         <div id="addlist-bottom">
-          商品类型：<select name="" id="" style="width: 150px; height: 25px">
+          商品类型：<select
+            name=""
+            id="Ttype"
+            style="width: 150px; height: 25px"
+          >
             <option value="">全部</option>
             <option value="">全部</option>
             <option value="">全部</option></select
@@ -206,7 +212,7 @@
           <button
             type="button"
             class="layui-btn layui-btn-sm layui-btn-normal"
-            id=""
+            id="search"
           >
             搜索
           </button>
@@ -247,22 +253,7 @@
               <th>操作</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- <tr>
-              <td><input type="checkbox" /></td>
-              <td>5555</td>
-              <td><img src="https://picsum.photos/200/200" alt="" />1234564</td>
-              <td>￥45.90</td>
-              <td>4995</td>
-              <td>5</td>
-              <td>2023-07-10 11:18:49</td>
-              <td>
-                <button>下架</button> <button>编辑</button>
-                <button>推广</button> <button>删除</button>
-                <button>复制</button>
-              </td>
-            </tr> -->
-          </tbody>
+          <tbody></tbody>
         </table>
         <div id="pageBox">
           <button
@@ -385,7 +376,49 @@
         $("table").on("click", tableFun);
         $("#modify").on("click", addBtnFun);
         $("#edit").on("click", editFun);
+        $("#search").on("click", searchFun);
       });
+
+      //搜索
+      function searchFun() {
+        let obj = {
+          title: $("#Tname").val(),
+          status: $("#Tstatus").val(),
+          create_time: $("Ttime").val(),
+          type: $("#Ttype").val(),
+        };
+        $.ajax({
+          url: "https://manage.zzgoodqc.cn/api/goods/",
+          type: "GET",
+          headers: {
+            Authorization: token,
+          },
+          data: obj,
+          success: function (res) {
+            console.log(res);
+            let html = "";
+            let arr = res.data.data;
+            console.log(arr);
+            arr.forEach((item, index) => {
+              html += ` <tr>
+                                 <td><input type="checkbox" /></td>
+                                 <td>${item.sort}</td>
+                                 <td><img src="${item.thumbnail}" alt="" />${item.title}</td>
+                                 <td>${item.price}</td>
+                                 <td>${item.stock}</td>
+                                 <td>${item.actual_sales}</td>
+                                 <td>${item.create_time}</td>
+                                 <td>
+                                    <button data-id=${item.id}>下架</button> <button data-id=${item.id}>编辑</button>
+                                    <button>推广</button> <button data-id=${item.id}>删除</button>
+                                    <button>复制</button>
+                                 </td>
+                  </tr>`;
+            });
+            $("tbody").html(html);
+          },
+        });
+      }
 
       //分页
       $("#upPage").click(function () {
