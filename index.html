@@ -32,7 +32,7 @@
             <i class="layui-icon layui-icon-spread-left"></i>
           </li>
           <li class="layui-nav-item layui-hide-xs">
-            <a href="javascript:;" id="zhuye">个人信息</a>
+            <a href="javascript:;">nav 1</a>
           </li>
           <li class="layui-nav-item layui-hide-xs">
             <a href="javascript:;">nav 2</a>
@@ -52,16 +52,13 @@
         <ul class="layui-nav layui-layout-right">
           <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
             <a href="javascript:;">
-              <img
-                src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png"
-                class="layui-nav-img"
-              />
-              tester
+              <img src="https://picsum.photos/200/200" class="layui-nav-img" />
+              个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="javascript:;">Your Profile</a></dd>
-              <dd><a href="javascript:;">Settings</a></dd>
-              <dd><a href="javascript:;">Sign out</a></dd>
+              <dd><a href="javascript:;" id="zhuye">个人信息</a></dd>
+              <dd><a href="javascript:;">设置</a></dd>
+              <dd><a href="javascript:;">注销</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -100,12 +97,7 @@
         </div>
       </div>
       <div class="layui-body">
-        <div style="padding: 15px">
-          <blockquote class="layui-elem-quote layui-text"></blockquote>
-          <div class="layui-card layui-panel">
-            <div class="layui-card-body"></div>
-          </div>
-        </div>
+        <div class="layui-card-body"></div>
       </div>
       <div class="layui-footer">
         <!-- 底部固定区域 -->
@@ -117,6 +109,9 @@
     <script>
       $(document).ready(function () {
         $("#zhuye").click();
+        $(".layui-card-body").html(`<iframe src='./用户信息.html'></iframe>`);
+      });
+      $("#zhuye").click(function () {
         $(".layui-card-body").html(`<iframe src='./用户信息.html'></iframe>`);
       });
       $("#sell").click(function () {
