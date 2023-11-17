@@ -76,15 +76,15 @@
               <a class="" href="javascript:;">商品管理</a>
               <dl class="layui-nav-child">
                 <dd><a href="javascript:;" id="sell">出售中</a></dd>
-                <dd><a href="javascript:;">已售罄</a></dd>
-                <dd><a href="javascript:;">仓库中</a></dd>
-                <dd><a href="javascript:;">回收站</a></dd>
+                <dd><a href="javascript:;" id="soldOut">已售罄</a></dd>
+                <dd><a href="javascript:;" id="bank">仓库中</a></dd>
+                <dd><a href="javascript:;" id="recycle">回收站</a></dd>
               </dl>
             </li>
             <li class="layui-nav-item">
-              <a href="javascript:;">menu group 2</a>
+              <a href="javascript:;">商品分类</a>
               <dl class="layui-nav-child">
-                <dd><a href="javascript:;">list 1</a></dd>
+                <dd><a href="javascript:;" id="sort">商品分类</a></dd>
                 <dd><a href="javascript:;">list 2</a></dd>
                 <dd><a href="javascript:;">超链接</a></dd>
               </dl>
@@ -115,12 +115,19 @@
         $(".layui-card-body").html(`<iframe src='./用户信息.html'></iframe>`);
       });
       $("#sell").click(function () {
-        let ell = $(this).text().trim();
-        switch (ell) {
-          case "出售中":
-            $(".layui-card-body").html(`<iframe src='./出售中.html'></iframe>`);
-            break;
-        }
+        $(".layui-card-body").html(`<iframe src='./出售中.html'></iframe>`);
+      });
+      $("#soldOut").click(function () {
+        $(".layui-card-body").html(`<iframe src='./已售罄.html'></iframe>`);
+      });
+      $("#bank").click(function () {
+        $(".layui-card-body").html(`<iframe src='./仓库中.html'></iframe>`);
+      });
+      $("#recycle").click(function () {
+        $(".layui-card-body").html(`<iframe src='./回收站.html'></iframe>`);
+      });
+      $("#sort").click(function () {
+        $(".layui-card-body").html(`<iframe src='./商品分类.html'></iframe>`);
       });
 
       //JS

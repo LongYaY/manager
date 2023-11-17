@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品分类</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet" />
+    <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 99.9%;
+      height: 730px;
+      border: 1px solid white;
+      background-color: #fff;
+    }
+    #addlist {
+      width: 93%;
+      height: 130px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      padding: 30px;
+      line-height: 50px;
+    }
+    #addlist-top {
+      margin: 0 0 15px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+    #addlist-bottom {
+      margin-top: 15px;
+    }
+    #goodslist {
+      width: 94.5%;
+      height: 400px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin: auto;
+      padding: 5px 20px;
+      line-height: 50px;
+    }
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th {
+      text-align: left;
+    }
+    /* tbody {
+      text-align: center;
+    } */
+    td {
+      border-top: 1px solid #ccc;
+    }
+    tbody img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    tbody button {
+      width: 40px;
+      height: 30px;
+      border: none;
+      color: #1e9fff;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    #mask {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    #modify {
+      width: 500px;
+      height: 680px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #modify h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #modify .form-row {
+      margin-bottom: 10px;
+    }
+
+    #modify input[type="text"] {
+      width: 96%;
+      height: 13px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    #modify button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #1e9fff;
+      border: none;
+      cursor: pointer;
+      margin: 20px 0 0 90px;
+    }
+    #pageBox {
+      text-align: center;
+    }
+    #mask-edit {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    #edit {
+      width: 500px;
+      height: 680px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #edit h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #edit .form-row {
+      margin-bottom: 10px;
+    }
+
+    #edit input[type="text"] {
+      width: 96%;
+      height: 13px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    #edit button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #1e9fff;
+      border: none;
+      cursor: pointer;
+      margin: 20px 0 0 90px;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <div id="addlist">
+        <div id="addlist-top">
+          <button type="button" class="layui-btn layui-bg-blue" id="add-btn">
+            添加商品
+          </button>
+          <span>商品限制数量：<span>已使用117/无限制</span></span>
+        </div>
+        <div>
+          商品分类：<select
+            name=""
+            id="Tstatus"
+            style="width: 150px; height: 25px"
+          >
+            <option value="">全部</option>
+            <option value="">全部</option>
+            <option value="">全部</option></select
+          >&emsp; &emsp; &emsp; 创建时间：<input
+            type="datetime-local"
+            style="width: 300px; height: 25px"
+            id="Ttime"
+          />
+        </div>
+      </div>
+      <div id="goodslist">
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>名称</th>
+              <th>创建时间</th>
+              <th>更新时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      let token = localStorage.getItem("token");
+      $(function () {
+        renderList();
+        $("tbody").on("click", tbodyFun);
+      });
+      function tbodyFun() {
+        if (
+          event.target.tagName == "BUTTON" &&
+          event.target.innerHTML == "删除"
+        ) {
+          let id = event.target.dataset.id;
+          $.ajax({
+            url: `https://manage.zzgoodqc.cn/api/category/` + id,
+            type: "DELETE",
+            headers: {
+              Authorization: token,
+            },
+            success: function (res) {
+              console.log(res);
+              renderList();
+            },
+          });
+        }
+      }
+
+      //渲染商品分类列表
+      function renderList() {
+        $.ajax({
+          url: `https://manage.zzgoodqc.cn/api/category`,
+          type: "GET",
+          headers: {
+            Authorization: token,
+          },
+          success: function (res) {
+            let html = "";
+            let arr = res.data.data;
+            arr.forEach((item, index) => {
+              html += ` <tr>
+                                 <td>${item.id}</td>
+                                 <td>${item.name}</td>
+                                 <td>${item.created_at}</td>
+                                 <td>${item.updated_at}</td>
+                                 <td>
+                                   <button data-id=${item.id}>删除</button>
+                                   <button data-id=${item.id}>编辑</button>
+                                 </td>
+                  </tr>`;
+            });
+            $("tbody").html(html);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

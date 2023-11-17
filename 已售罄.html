@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>出售中</title>
+    <title>已售罄</title>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet" />
     <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
@@ -561,7 +561,6 @@
           },
         });
       }
-
       //删除
       function deleFun(id) {
         $.ajax({
@@ -580,7 +579,7 @@
       //渲染商品列表
       function renderList(id) {
         $.ajax({
-          url: `https://manage.zzgoodqc.cn/api/goods?page=${page}&limit=${limit}&is_sale=1`,
+          url: `https://manage.zzgoodqc.cn/api/goods?page=${page}&limit=${limit}&is_stock=1`,
           type: "GET",
           headers: {
             Authorization: token,
@@ -599,8 +598,7 @@
                                  <td>${item.create_time}</td>
                                  <td>
                                     <button data-id=${item.id}>下架</button> <button data-id=${item.id}>编辑</button>
-                                    <button>推广</button> <button data-id=${item.id}>删除</button>
-                                    <button>复制</button>
+                                    <button data-id=${item.id}>删除</button>
                                  </td>
                   </tr>`;
             });
