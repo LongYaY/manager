@@ -85,17 +85,16 @@
             Authorization: token,
           },
           success: function (res) {
-            let arr = Array(res.data);
+            console.log(res);
             let html = "";
-            arr.forEach((item) => {
-              html += `  <p><strong>id:</strong> ${item.id}</p>
-                         <p><strong>用户名：</strong> ${item.username}</p>
-                         <p><strong>手机号：</strong> ${item.mobile}</p>
-                         <p><strong>Email：</strong> ${item.email}</p>
-                         <p><strong>QQ号：</strong> ${item.qq}</p>
-                         <p><strong>创建时间：</strong> ${item.created_at}</p>
-                         <p><strong>更新时间：</strong> ${item.updated_at}</p>`;
-            });
+
+            html += `  <p><strong>id:</strong> ${res.data.id}</p>
+                         <p><strong>用户名：</strong> ${res.data.username}</p>
+                         <p><strong>手机号：</strong> ${res.data.mobile}</p>
+                         <p><strong>Email：</strong> ${res.data.email}</p>
+                         <p><strong>QQ号：</strong> ${res.data.qq}</p>
+                         <p><strong>创建时间：</strong> ${res.data.created_at}</p>
+                         <p><strong>更新时间：</strong> ${res.data.updated_at}</p>`;
             $(".user-details").html(html);
           },
         });
