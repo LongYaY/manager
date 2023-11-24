@@ -1,0 +1,309 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper one</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../swiper/swiper-bundle.css" />
+
+    <!-- Demo styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        border-radius: 8px;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .box {
+        width: 70%;
+        height: 300px;
+        position: relative;
+        top: 100px;
+        left: 200px;
+        /* border: 1px solid black; */
+      }
+      .carousel {
+        width: 100%;
+        height: 210px;
+        overflow: hidden;
+        margin-top: 30px;
+      }
+      .swiper-button-next {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(47, 46, 46);
+        color: #dddddd;
+        border-radius: 50%;
+        transform: scale(0.5);
+        padding: 20px;
+      }
+      .swiper-button-prev {
+        position: absolute;
+        top: 20px;
+        left: unset;
+        right: 50px;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(47, 46, 46);
+        color: #dddddd;
+        border-radius: 50%;
+        transform: scale(0.5);
+        padding: 20px;
+      }
+      img {
+        width: 178.8px;
+        height: 210px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>正在热播</h2>
+      <!-- Add Arrows -->
+      <div
+        class="swiper-button-next"
+        tabindex="0"
+        role="button"
+        aria-label="Next slide"
+        aria-controls="swiper-wrapper-9efd6eb6988626c6"
+      ></div>
+      <div
+        class="swiper-button-prev"
+        tabindex="0"
+        role="button"
+        aria-label="Previous slide"
+        aria-controls="swiper-wrapper-9efd6eb6988626c6"
+      ></div>
+      <span
+        class="swiper-notification"
+        aria-live="assertive"
+        aria-atomic="true"
+      ></span>
+      <div class="carousel">
+        <!-- Swiper -->
+        <div
+          class="swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden"
+        >
+          <div
+            class="swiper-wrapper"
+            id="swiper-wrapper-9efd6eb6988626c6"
+            aria-live="polite"
+          >
+            <div
+              class="swiper-slide swiper-slide-active"
+              role="group"
+              aria-label="1 / 10"
+              data-swiper-slide-index="0"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F839e29e6-f950-4a92-8e72-424931e712f7%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141071&t=9ee769d103c3c87b28b7fd2e9d0e3c18"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide swiper-slide-next"
+              role="group"
+              aria-label="2 / 10"
+              data-swiper-slide-index="1"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fd58145bb-1e56-48e7-9b6b-231d560bc58c%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141071&t=5c7e3a7822d79fc3871d922996a11b42"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="3 / 10"
+              data-swiper-slide-index="2"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202006%2F07%2F20200607153456_nnrwl.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141542&t=611493543379df640f69b5d72e09f22e"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="4 / 10"
+              data-swiper-slide-index="3"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F6c056771-5d4b-4ead-8c61-10071f8e108a%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141074&t=27048ad48e8af42c2799fe1f26c6b7dc"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="5 / 10"
+              data-swiper-slide-index="4"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fcc8e92e6-1a78-435a-a089-672d25ea824e%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141074&t=056ae5da001ba123f84d03d55f15b9a1"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="6 / 10"
+              data-swiper-slide-index="5"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fab37d15b-8a09-41f3-8038-79cfcc2764e1%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141074&t=caf24162e4020749cfc6204f79ed404c"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="7 / 10"
+              data-swiper-slide-index="6"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F58c3cff2-a25d-4147-bb38-06769d3c30d3%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141074&t=8d89dcca650f45cf262e0b89ef8fac85"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="8 / 10"
+              data-swiper-slide-index="7"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://img0.baidu.com/it/u=3877414075,3564638088&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="9 / 10"
+              data-swiper-slide-index="8"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F5554b142-4702-4af2-8e96-292e41f064e6%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141361&t=06479c7485d176213bcaea03919e379c"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="10 / 10"
+              data-swiper-slide-index="9"
+              style="width: 300px; margin-right: 30px"
+            >
+              <img
+                src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F9d97c3dd-5ae0-4692-b867-cef1f7ed9be8%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703141361&t=0bf83eef0d92d8c494d1320a7bfbfaf7"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div
+            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+          >
+            <span
+              class="swiper-pagination-bullet swiper-pagination-bullet-active"
+              tabindex="0"
+              role="button"
+              aria-label="Go to slide 1"
+              aria-current="true"
+            ></span
+            ><span
+              class="swiper-pagination-bullet"
+              tabindex="0"
+              role="button"
+              aria-label="Go to slide 2"
+            ></span
+            ><span
+              class="swiper-pagination-bullet"
+              tabindex="0"
+              role="button"
+              aria-label="Go to slide 3"
+            ></span
+            ><span
+              class="swiper-pagination-bullet"
+              tabindex="0"
+              role="button"
+              aria-label="Go to slide 4"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar
+    ><chatgpt-sidebar-popups data-gpts-theme="light"></chatgpt-sidebar-popups>
+    <!-- Swiper JS -->
+    <script src="../swiper/swiper-bundle.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        slidesPerGroup: 5,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

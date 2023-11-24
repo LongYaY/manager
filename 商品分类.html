@@ -71,7 +71,6 @@
       background-color: white;
       cursor: pointer;
     }
-
     #mask {
       display: none;
       position: fixed;
@@ -252,14 +251,14 @@
             let arr = res.data.data;
             arr.forEach((item, index) => {
               html += ` <tr>
-                                 <td>${item.id}</td>
-                                 <td>${item.name}</td>
-                                 <td>${item.created_at}</td>
-                                 <td>${item.updated_at}</td>
-                                 <td>
-                                   <button data-id=${item.id}>删除</button>
-                                   <button data-id=${item.id}>编辑</button>
-                                 </td>
+                          <td>${item.id}</td>
+                          <td>${item.name}</td>
+                          <td>${item.created_at}</td>
+                          <td>${item.updated_at}</td>
+                          <td>
+                            <button data-id=${item.id}>删除</button>
+                            <button data-id=${item.id}>编辑</button>
+                          </td>
                   </tr>`;
             });
             $("tbody").html(html);

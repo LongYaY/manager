@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../swiper/swiper-bundle.css" />
+
+    <!-- Demo styles -->
+    <style>
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 500px;
+        height: 400px;
+        display: flex;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #eee;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 500px;
+        height: 400px;
+        object-fit: cover;
+      }
+      .carousel {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-pagination span {
+        display: block;
+        width: 10px;
+        height: 6px;
+        background: #18ae66;
+        border-radius: 2px;
+        border: 0;
+        margin-right: 7px;
+        float: right;
+        color: #000;
+        z-index: 9;
+        cursor: pointer;
+        text-align: center;
+        text-indent: -9999em;
+        border: 1px solid black;
+      }
+      p {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="carousel">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231122/27931700628696474.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>助农直播走进田间低头</p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231121/73131700542413224.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>认真开展消防安全大检查 筑牢安全防线</p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231117/58111700197138614.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>太原邮件处理中心投入提速提效</p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231115/84091700020686896.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>西安邮区中心“双11”增量提效</p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231114/47991699937359677.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>湖南邮保携手帮扶捐赠保险</p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://www.chinapostnews.com.cn/newspaper/epaper/res/1/20231110/44791699592522098.jpg"
+              style="width: 100%; height: 340px"
+              alt=""
+            />
+            <p>广西邮政驻点服务第一届学青会</p>
+          </div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="../swiper/swiper-bundle.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

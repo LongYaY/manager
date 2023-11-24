@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title> 
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script> 
+    <link href="//unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet" />  
+    <script src="./node_modules/echarts/dist/echarts.js"></script>
+    <script src="https://www.isqqw.com/dep/echarts/map/js/china.js"></script>
+    <link rel="stylesheet" href="./中国邮政.css" />
+  </head>
+  <body>
+    <div id="box">
+      <div id="box-box">
+ <div id="header">
+        <div id="header-nav">
+          <img
+            src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/200568120.png"
+            alt=""
+          />
+          <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">新闻中心</a></li>
+            <li><a href="">党建时空</a></li>
+            <li><a href="">产品服务</a></li>
+            <li><a href="">社会责任</a></li>
+            <li><a href="">企业文化</a></li>
+          </ul>
+          <input type="text" placeholder="输入搜索关键字" />
+          <button id="search">搜索</button>
+        </div>
+
+        <div id="swiper">
+          <iframe
+            src="./Swipers/swiper3.html"
+            width="100%"
+            height="100%"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+      <div id="content">
+        <div id="bus">
+          <ul>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677353.png"
+                alt=""
+              /><a href="https://www.11185.cn/web/#/index">邮政业务</a>
+            </li>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677354.png"
+                alt=""
+              /><a href="https://www.ems.com.cn/">快递业务</a>
+            </li>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677355.png"
+                alt=""
+              /><a href="http://www.psbc.com/cn/index.html">银行业务</a>
+            </li>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677356.png"
+                alt=""
+              /><a href="https://www.chinapost-life.com/">保险业务</a>
+            </li>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677357.png"
+                alt=""
+              /><a href="http://www.cnpsec.com.cn/main/index.html">证券业务</a>
+            </li>
+            <li>
+              <img
+                src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/2012677358.png"
+                alt=""
+              /><a href="http://www.ule.com/">网上商场</a>
+            </li>
+          </ul>
+        </div>
+        <div id="section">
+          <div id="section-left">
+            <iframe
+              src="./Swipers/swiper5.html"
+              frameborder="0"
+              width="100%"
+              height="100%"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <div id="section-right">
+            <div class="layui-tab layui-tab-brief">
+              <ul class="layui-tab-title" id="one">
+                <li class="layui-this">集团要闻</li>
+                <li>综合新闻</li>
+                <li>媒体聚焦</li>
+                <li>一线风采</li>
+              </ul>
+              <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                  <ul id="di">
+                    <li style="list-style-type: disc">
+                      <a href="#">
+                        体系化推进服务乡村振兴取得规模化成效
+                        走出一条具有邮政特色服务乡村...</a
+                      >
+                      <span id="si"
+                        >11月14日至16日，集团公司在浙江杭州召开高质量开展第二批主题教育暨服务乡村振兴现场推进会，深入贯彻习近平新时代中国特色社会主义思想和...</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">
+                        深入开展重点领域风险隐患排查整治
+                        加快推进邮政安全生产管理体...</a
+                      >
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#"
+                        >全国邮政代理金融本年新增储蓄存款突破九千亿元</a
+                      >
+                      <span id="sr">2023-11-21</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中央和国家机关工委领导调研邮政基层联系点</a>
+                      <span id="sr">2023-11-17</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">全国总工会领导肯定江西邮政“产改”工作</a>
+                      <span id="sr">2023-11-17</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政携手淘天打造西北集拼项目</a>
+                      <span id="sr">2023-11-15</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="di">
+                    <li style="list-style-type: disc">
+                      <a href="#">建功沃野展宏图</a>
+                      <span id="si"
+                        >江南忆，最忆是杭州。11月的杭州，虽已过立冬时节，拂面而来的风却无寒意。天空湛蓝，阳光正好，让这片水墨江南灵秀之地更显生机与活力。？...</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">安庆邮银全力打造金融服务乡村新模式</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+
+                    <li style="list-style-type: disc">
+                      <a href="#">杭州市分行支持建设区域重点基础设施项目</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">金融活水润高原 “邮”墨重彩绘新篇</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">建宁邮政水果季项目创佳绩</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">银担惠农 油茶丰收</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="di">
+                    <li style="list-style-type: disc">
+                      <a href="#">邮路新变</a
+                      ><span id="si"
+                        >今年“双十一”购物，甘肃快递业务量激增却未引发邮件积压，不少人感慨快递投递变快了。为了一探究竟，记者走访基层投递网络发达、覆盖面最...</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <span id="ss">新华网：</span
+                      ><a href="#"
+                        >中国邮政浙江行——用点点“邮政绿” 绘就一幅“乡村振兴...</a
+                      ><span id="sr">2023-11-20</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <span id="ss">吉林日报：</span
+                      ><a href="#">珲马铁路邮政专列实现常态化运行...</a
+                      ><span id="sr">2023-11-17</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <span id="ss">南京日报：</span
+                      ><a href="#"
+                        >维护国家经济安全 南京邮政协助破获多起涉嫌走私案件...</a
+                      ><span id="sr">2023-11-17</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <span id="ss">多才贵州网：</span
+                      ><a href="#"
+                        >提前部署 增强运力 贵州邮政保障快递服务平稳有序...</a
+                      ><span id="sr">2023-11-17</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <span id="ss">扬子晚报网：</span
+                      ><a href="#">全天候“不打烊” 邮政自助驿站亮相海安...</a
+                      ><span id="sr">2023-11-17</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="di">
+                    <li style="list-style-type: disc">
+                      <a href="#">走进乡村沃野 讲述邮政故事</a>
+                      <span id="si"
+                        >记者，是一个永远在路上的职业。他们不是在采访现场，就是在前往现场的路上。今年，本报开展了“高质量发展蹲点调研行”主题采访活动，组织...</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">刘婷：深入群众 滋润民心</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">韦艳梅：履职尽责 勇当先锋</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">葛军：敬业奉献 久久为功</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">其美多吉：坚守初心 用情奋斗</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">浑身“蟹”数 助洪湖清水蟹旺销</a>
+                      <span id="sr">2023-11-22</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="video">
+          <div id="video-left">
+            <div id="video-left-one">
+              <p>邮政视频</p>
+            </div>
+            <div id="video-left-two">
+              <video
+                controls
+                src="http://v.ctvpost.com/res/ChinaPostVideo/video/23111/5122_2.mp4"
+              ></video>
+              <div id="video-left-three">
+                <p>《邮政视频联播》2023年第42期</p>
+              </div>
+              <ul id="video-left-fore">
+                <li>强邮争先锋 建功新时代</li>
+                <li>了不起的中国，不一样的邮政</li>
+              </ul>
+            </div>
+          </div>
+          <div id="section-right">
+            <div class="layui-tab layui-tab-brief">
+              <ul class="layui-tab-title" id="one">
+                <li class="layui-this">信息公告</li>
+                <li>邮资票品发行信息</li>
+                <li>采购公告公示</li>
+                <li>预决算公开</li>
+              </ul>
+              <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                  <ul id="dr">
+                    <li style="list-style-type: disc">
+                      <a href="#">
+                        中国邮政集团有限公司声明</a
+                      >
+                      <span id="sw">2023-11-09</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">
+                        中国邮政集团有限公司审计部西安审计分部2023年系统内...</a
+                      >
+                      <span id="sw">2023-10-27</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#"
+                        >关于第十九届（2023年）全国邮政企业管理现代化创新成...</a
+                      >
+                      <span id="sw">2023-10-25</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司审计部南京审计分部2023年秋季系...</a>
+                      <span id="sw">2023-10-19</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中央纪委国家监委驻中国邮政集团有限公司纪检监察组20...</a>
+                      <span id="sw">2023-10-13</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">2023年全国邮政企业科技创新成果评选结果公示</a>
+                      <span id="sw">2023-10-11</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司任免通知</a>
+                        <span id="sw">2023-09-13</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国共产党中国邮政集团有限公司党组任免通知</a>
+                        <span id="sw">2023-09-13</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司所属企业名单</a>
+                        <span id="sw">2023-08-30</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司任免通知</a>
+                        <span id="sw">2023-08-23</span>
+                      </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="dr">
+                    <li style="list-style-type: disc">
+                      <a href="#">《龙腾贺岁》贺年专用邮票</a>
+                      <span id="sw"
+                        >2023-11-14</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">《天龙山回归佛首》普通邮资明信片</a>
+                      <span id="sw">2023-11-13</span>
+                    </li>
+
+                    <li style="list-style-type: disc">
+                      <a href="#">《晋祠圣母殿》普通邮资明信</a>
+                      <span id="sw">2023-11-13</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">《中国古代文学家（五）》纪念邮票</a>
+                      <span id="sw">2023-11-02</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">《西泠印社建社120年》纪念邮资信封</a>
+                      <span id="sw">2023-10-31</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">《科技创新（四）》纪念邮票</a>
+                      <span id="sw">2023-10-26</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                        <a href="#">《江西财经大学》普通邮资明信片</a>
+                        <span id="sw">2023-10-24</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">《世界上第一株杂交水稻培育成功五十周年》纪念邮票</a>
+                        <span id="sw">2023-10-20</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">《国家考古遗址公园》特种邮票</a>
+                        <span id="sw">2023-10-12</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">《河北工业大学建校120周年》纪念邮资信封</a>
+                        <span id="sw">2023-10-12</span>
+                      </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="dr">
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团公司供应商注册公告</a
+                      ><span id="sw">2023-08-30</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#"
+                        >中国邮政储蓄银行股份有限公司吉林市分行2024年全区保...</a
+                      ><span id="sw">2023-11-23</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2023年高拍仪采购项目 中标候选...</a
+                      ><span id="sw">2023-11-23</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#"
+                        >中国邮政集团有限公司2023年柜内清采购项目 中标候选...</a
+                      ><span id="sw">2023-11-23</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#"
+                        >中国邮政集团有限公司2023年存折打印机采购项目 中标...</a
+                      ><span id="sw">2023-11-23</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                        <a href="#">青岛市分公司李沧区浮山路8号部分房屋租赁项目</a
+                        ><span id="sw">2023-11-23</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政储蓄银行嘉兴市分行沙龙管家系统项目 招标公...</a
+                        ><span id="sw">2023-11-23</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政储蓄银行嘉兴市分行费用事前审批系统项目 招...</a
+                        ><span id="sw">2023-11-23</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政储蓄银行嘉兴市分行对公联动服务系统项目 招...</a
+                        ><span id="sw">2023-11-23</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司牡丹江市分公司2023年县（市）分...</a
+                        ><span id="sw">2023-11-23</span>
+                      </li>
+                  </ul>
+                </div>
+                <div class="layui-tab-item">
+                  <ul id="dr">
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2022年度部门决算</a>
+                      <span id="sw"
+                        >2023-07-25</span
+                      >
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2023年部门预算</a>
+                      <span id="sw">2023-03-28</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2021年度部门决算</a>
+                      <span id="sw">2022-07-21</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2022年部门预算</a>
+                      <span id="sw">2022-03-24</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2020年度部门决算</a>
+                      <span id="sw">2021-07-08</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                      <a href="#">中国邮政集团有限公司2021年部门预算</a>
+                      <span id="sw">2021-03-25</span>
+                    </li>
+                    <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司2019年度部门决算</a>
+                        <span id="sw">2020-07-17</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团有限公司2020年部门预算</a>
+                        <span id="sw">2020-06-11</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团公司2018年度部门决算</a>
+                        <span id="sw">2019-07-19</span>
+                      </li>
+                      <li style="list-style-type: disc">
+                        <a href="#">中国邮政集团公司2019年部门预算</a>
+                        <span id="sw">2019-04-02</span>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div id="network">
+        <div id="network-left">
+          <div id="network-left-one">
+            <p>邮政网点</p>
+          </div>
+          <div id="network-left-two">
+            <img src="./喇叭.png" alt="">
+            <p>邮政官网新增邮政营业网点公示信息</p>
+            <span>查看更多</span>
+          </div>
+          <div id="network-left-three">
+            <script src="./ECharts/echarts1.js"></script>
+          </div>
+        </div>
+        <div id="network-right">
+          <div id="network-right-one">
+            <p>客服热线</p>
+          </div>
+          <div id="network-right-two">
+            <ul>
+              <li>
+                <span id="kf">邮政业务</span>
+                <span  id="rx">11185</span>
+              </li>
+              <li>
+                <span id="kf">邮政银行</span>
+                <span id="rx">95580</span>
+              </li>
+              <li>
+                <span id="kf">速递物流</span>
+                <span  id="rx">11183</span>
+              </li>
+              <li>
+                <span id="kf">中邮保险</span>
+                <span  id="rx">4008909999</span>
+              </li>
+              <li>
+                <span id="kf">中邮证券</span>
+                <span  id="rx">4008888005</span>
+              </li>
+            </ul>
+            <button id="report">举报专区</button>
+          </div>
+          <div id="network-right-three">
+            <div id="network-three-top">
+              <p>邮政网点</p>
+            </div>
+            <div id="network-three-bottom">
+              <ul>
+                <li><img src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/1813129448.jpg" alt="">
+                <p>中国邮政微信订阅号</p></li>
+                <li><img src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/1813478632.jpg" alt="">
+                  <p>中国邮政微信服务号</p></li>
+                  <li><img src="http://www.chinapost.com.cn/res/ChinaPostJT/structure/1814288693.jpg" alt="">
+                    <p>中国邮政官方微博</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     
+    </div>
+    <div id="footer">
+      <div id="footer-box">
+          <div id="footer-top">
+            <ul>
+             <li><h4>友情链接：</h4></li>
+             <li><a href="">中国政府网</a></li>
+             <li><a href="">政治部</a></li>
+             <li><a href="">交通运输部</a></li>
+             <li><a href="">国家邮政局</a></li>
+            </ul>
+      </div>
+      <div id="footer-bottom">
+       <ul>
+        <li><p>中国邮政集团有限公司版权所有</p></li>
+        <li><a href="">京ICP备15035540号</a></li>
+        <li><a href="">京公网安备110401400185</a></li>
+        <li><a href="">联系我们</a></li>
+       </ul>
+      </div>
+    </div>
+      </div>
+    
+    <script src="//unpkg.com/layui@2.8.18/dist/layui.js"></script>
+  </body>
+</html>

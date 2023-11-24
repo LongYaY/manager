@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../swiper/swiper-bundle.css" />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .swiper {
+        width: 50%;
+        height: 50%;
+        float: left;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #box {
+        width: 50%;
+        height: 100%;
+        float: right;
+        position: relative;
+      }
+      #box .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        height: calc((100% - 30px) / 2) !important;
+        /* Center slide text vertically */
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      .bo {
+        width: 100%;
+        height: 30%;
+        background-color: aqua;
+        margin-top: 10px;
+      }
+      #right {
+        position: absolute;
+        right: 10px;
+        top: 230px;
+      }
+      #left {
+        position: absolute;
+        left: 10px;
+        top: 230px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://ts1.cn.mm.bing.net/th/id/R-C.5a49085e4afe4261c8994e7b2ad91842?rik=VxQQBSuFk%2f%2ftaA&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fbbs4%2f200810%2f17%2f1224206085128.jpg&ehk=QaHcMJfNlSmAGrzRh6DkCiRkBlEs9J5Tw95WfADpO9E%3d&risl=&pid=ImgRaw&r=0"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://ts1.cn.mm.bing.net/th/id/R-C.f40ba86561918519b95431a5921e4f5d?rik=9AIbo9AhOYel0w&riu=http%3a%2f%2fwww.quazero.com%2fuploads%2fallimg%2f131210%2f1-131210210248.jpg&ehk=v81JiWKphT%2baLBzbhrxRkTUUwwnhJ5F2PFkm4xn4nEM%3d&risl=&pid=ImgRaw&r=0"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://img.zcool.cn/community/01d89d556899f60000012716e4364f.jpg@1280w_1l_2o_100sh.jpg"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://ts1.cn.mm.bing.net/th/id/R-C.13a9b8b347651d085c7bf90fbace5624?rik=q6t2JgkiiYcgzg&riu=http%3a%2f%2fp2.qhimgs4.com%2ft01fd61ef8c5088feff.jpg&ehk=jhcduyGu1W8AU4aQQPNj6%2feRs3UuA1fOsBzhWM5qVa0%3d&risl=&pid=ImgRaw&r=0"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://tse4-mm.cn.bing.net/th/id/OIP-C.ldB-VIxe8L6sCjYPSuzOiAHaEn?rs=1&pid=ImgDetMain"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://ts1.cn.mm.bing.net/th/id/R-C.eec02321ea106169d757f427b98b358d?rik=%2bgK43uKTPrZbCw&riu=http%3a%2f%2f00.minipic.eastday.com%2f20170823%2f20170823152907_d41d8cd98f00b204e9800998ecf8427e_4.jpeg&ehk=FsISayQ5Gjp%2boHXA8OW7nhrZdn2JEzUKk3lfW%2br0P70%3d&risl=&pid=ImgRaw&r=0"
+          />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper mySwiper" id="box">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="bo">
+            <img
+              src="https://ts1.cn.mm.bing.net/th/id/R-C.eec02321ea106169d757f427b98b358d?rik=%2bgK43uKTPrZbCw&riu=http%3a%2f%2f00.minipic.eastday.com%2f20170823%2f20170823152907_d41d8cd98f00b204e9800998ecf8427e_4.jpeg&ehk=FsISayQ5Gjp%2boHXA8OW7nhrZdn2JEzUKk3lfW%2br0P70%3d&risl=&pid=ImgRaw&r=0"
+            />
+          </div>
+          <div class="bo">
+            <img
+              src="https://tse4-mm.cn.bing.net/th/id/OIP-C.ldB-VIxe8L6sCjYPSuzOiAHaEn?rs=1&pid=ImgDetMain"
+            />
+          </div>
+          <div class="bo">
+            <img
+              src="https://ts1.cn.mm.bing.net/th/id/R-C.13a9b8b347651d085c7bf90fbace5624?rik=q6t2JgkiiYcgzg&riu=http%3a%2f%2fp2.qhimgs4.com%2ft01fd61ef8c5088feff.jpg&ehk=jhcduyGu1W8AU4aQQPNj6%2feRs3UuA1fOsBzhWM5qVa0%3d&risl=&pid=ImgRaw&r=0"
+            />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bo">
+            <img
+              src="https://img.zcool.cn/community/01d89d556899f60000012716e4364f.jpg@1280w_1l_2o_100sh.jpg"
+            />
+          </div>
+          <div class="bo">
+            <img
+              src="https://ts1.cn.mm.bing.net/th/id/R-C.f40ba86561918519b95431a5921e4f5d?rik=9AIbo9AhOYel0w&riu=http%3a%2f%2fwww.quazero.com%2fuploads%2fallimg%2f131210%2f1-131210210248.jpg&ehk=v81JiWKphT%2baLBzbhrxRkTUUwwnhJ5F2PFkm4xn4nEM%3d&risl=&pid=ImgRaw&r=0"
+            />
+          </div>
+          <div class="bo">
+            <img
+              src="https://ts1.cn.mm.bing.net/th/id/R-C.5a49085e4afe4261c8994e7b2ad91842?rik=VxQQBSuFk%2f%2ftaA&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fbbs4%2f200810%2f17%2f1224206085128.jpg&ehk=QaHcMJfNlSmAGrzRh6DkCiRkBlEs9J5Tw95WfADpO9E%3d&risl=&pid=ImgRaw&r=0"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next" id="right"></div>
+      <div class="swiper-button-prev" id="left"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="../swiper/swiper-bundle.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
